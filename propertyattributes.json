@@ -1,0 +1,14 @@
+{
+  "address": "\"an address\"",
+  "amenities": {},
+  "checkoutInstructions": "here are checkout instructions",
+  "description": "a property description",
+  "imageIds": [],
+  "keywords": [],
+  "maximumOccupancy": 1,
+  "minimumDaysInRental": 1,
+  "property_id": 1,
+  "squareFootage": 0,
+  "tags": [],
+  "zipCode": 0
+}

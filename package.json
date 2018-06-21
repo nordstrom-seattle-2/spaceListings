@@ -1,0 +1,12 @@
+{
+    "name": "Space_listing",
+    "version": "1.0.0",
+    "main": "server.js",
+    "dependencies": {
+        "express": "~4.0.0",
+        "mongoose": "~3.6.13",
+        "body-parser": "~1.0.1",
+        "aws-sdk": "^2.238.1",
+        "uuid": "^3.2.1"
+    }
+}
