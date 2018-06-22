@@ -1,16 +1,19 @@
-var express    = require('express');
-var app        = express();
+const express = require('express');
+const app = express();
+const aws = require('aws-sdk');
 
-var bodyParser = require('body-parser');
-var Space     = require('./app/models/spaces');
+// middleware 
+const bodyParser = require('body-parser');
+const Space = require('./app/models/spaces');
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var port = process.env.PORT || 8080;
+const port = process.env.PORT || 8080;
+const router = express.Router();
 
-var router = express.Router();
+const s3Bucket = new AWS.S3( { params: {Bucket: 'space-listing-images'} } );
 
 router.use(function(req, res, next) {
     // do logging
