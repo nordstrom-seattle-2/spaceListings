@@ -26,19 +26,24 @@ router.get('/', function(req, res) {
 });
 
 router.route('/spaces/:space_id')
-	.get(function(req, res){
+	.get(function(req, res) {
 		console.log("Received a request for " + req.params.space_id)
 
 		res.json(Space.getSpace(req.params.space_id));
 
 		//res.json({ message: 'Hello! I recieved the request' });
 	})
-	.post(function(req, res){
-
-	})
+	.post(function(req, res) {
+		if (req.body.images) {
+			// const data = {Key: imageName, Body: imageFile};
+			s3Bucket.putObject(data, function(err, data) {
+	  			if (err) console.log('Error uploading data: ', data);
+			});
+		}
+	});
 
 router.route('/Spaces')
-	.put(function(req, res){
+	.put(function(req, res) {
 
 	})
 
